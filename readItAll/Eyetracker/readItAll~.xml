@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="E:\Theron\di-hyundai_hcd14-2012\readItAll\Eyetracker\readItAll.v4p" systemname="readItAll" filename="D:\Theron\di-hyundai_hcd14-2012\readItAll\Eyetracker\readItAll.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="7950" top="1980" width="19620" height="14160">
+   <PATCH nodename="C:\Users\SCHSCH\Desktop\readItAll\readItAll\Eyetracker\readItAll.v4p" systemname="readItAll" filename="D:\Theron\di-hyundai_hcd14-2012\readItAll\Eyetracker\readItAll.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="1305" top="1560" width="19620" height="14160">
    </BOUNDS>
    <NODE id="335" componentmode="Hidden" systemname="IS1_Config" filename="IS1_Config.v4p" nodename="subpatches\Eyetracker\IS1_Config.v4p">
    <PIN pinname="Enable tracking" visible="1">
@@ -21,7 +21,7 @@
    </PIN>
    <BOUNDS type="Window" left="9525" top="2580" width="14475" height="9885">
    </BOUNDS>
-   <PIN pinname="Device" visible="1">
+   <PIN pinname="Device" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Eyepos" visible="1">
    </PIN>
@@ -33,7 +33,7 @@
    </PIN>
    <PIN pinname="Update" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Sync State" visible="1">
+   <PIN pinname="Sync State" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="372" systemname="IOBox (Value Advanced)">
@@ -186,52 +186,6 @@
    <PIN pinname="Layer 8" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE systemname="Tracking (Devices IS1)" filename="..\..\Patches\plugins\IS1.dll" nodename="Tracking (Devices IS1)" componentmode="Hidden" id="386">
-   <BOUNDS type="Node" left="4080" top="3555" width="7905" height="270">
-   </BOUNDS>
-   <PIN pinname="Device" visible="1">
-   </PIN>
-   <PIN pinname="Enable" visible="1">
-   </PIN>
-   <PIN pinname="Gaze Point 2DXY" visible="1">
-   </PIN>
-   <PIN pinname="Left Eye PosXYZ" visible="1">
-   </PIN>
-   <PIN pinname="Right Eye PosXYZ" visible="1">
-   </PIN>
-   <PIN pinname="Left Eye Validity" visible="1">
-   </PIN>
-   <PIN pinname="Right Eye Validity" visible="1">
-   </PIN>
-   <PIN pinname="Left Eye Pupil Diameter" visible="1">
-   </PIN>
-   <PIN pinname="Right Eye Pupil Diameter" visible="1">
-   </PIN>
-   <PIN pinname="Left Eye Gaze PointXYZ" visible="1">
-   </PIN>
-   <PIN pinname="Right Eye Gaze PointXYZ" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="4080" top="3555">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="386" srcpinname="Gaze Point 2DXY" dstnodeid="393" dstpinname="Y Input Value">
-   </LINK>
-   <LINK srcnodeid="386" srcpinname="Left Eye Validity" dstnodeid="390" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="386" srcpinname="Right Eye Validity" dstnodeid="390" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="386" srcpinname="Left Eye Pupil Diameter" dstnodeid="388" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="386" srcpinname="Right Eye Pupil Diameter" dstnodeid="388" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="335" srcpinname="Device" dstnodeid="386" dstpinname="Device">
-   </LINK>
-   <LINK srcnodeid="379" srcpinname="Y Output Value" dstnodeid="386" dstpinname="Enable" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="9420" y="2198">
-   </LINKPOINT>
-   <LINKPOINT x="11925" y="2198">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="simpleCalibration" filename="simpleCalibration.v4p" componentmode="Hidden" id="467" nodename="simpleCalibration.v4p">
    <BOUNDS type="Node" left="2010" top="4755" width="2535" height="270">
    </BOUNDS>
@@ -243,17 +197,15 @@
    </PIN>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Device" visible="1">
+   <PIN pinname="Device" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Calibrate" visible="1">
    </PIN>
    <PIN pinname="Cancel" visible="1">
    </PIN>
-   <PIN pinname="Collecting gaze samples" visible="1">
+   <PIN pinname="Collecting gaze samples" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="386" srcpinname="Gaze Point 2DXY" dstnodeid="467" dstpinname="Gaze Point 2DXY">
-   </LINK>
    <LINK srcnodeid="335" srcpinname="Device" dstnodeid="467" dstpinname="Device" linkstyle="VHV">
    <LINKPOINT x="4095" y="2910">
    </LINKPOINT>
@@ -599,7 +551,7 @@
    <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="502">
    <BOUNDS type="Node" left="11505" top="5625" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Go To Position" visible="1">
+   <PIN pinname="Go To Position" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Position Out" visible="1">
    </PIN>
@@ -1606,7 +1558,7 @@
    </LINK>
    <LINK srcnodeid="543" srcpinname="Y" dstnodeid="592" dstpinname="Input 2">
    </LINK>
-   <NODE systemname="snapping" filename="snapping.v4p" componentmode="InAWindow" id="593" nodename="snapping.v4p">
+   <NODE systemname="snapping" filename="snapping.v4p" componentmode="Hidden" id="593" nodename="snapping.v4p">
    <BOUNDS type="Node" left="18885" top="9045" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="18885" top="9045" width="4800" height="3600">
@@ -1739,8 +1691,6 @@
    <LINK srcnodeid="593" srcpinname="Layer" dstnodeid="465" dstpinname="Layer 4">
    </LINK>
    <LINK srcnodeid="593" srcpinname="closestPoint" dstnodeid="511" dstpinname="XY">
-   </LINK>
-   <LINK srcnodeid="386" srcpinname="Gaze Point 2DXY" dstnodeid="502" dstpinname="Go To Position">
    </LINK>
    <LINK srcnodeid="502" srcpinname="Position Out" dstnodeid="591" dstpinname="Input 1">
    </LINK>
@@ -1916,4 +1866,54 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <NODE systemname="Tracking (Devices IS1)" filename="..\Patches\Plugins\IS1.dll" nodename="Tracking (Devices IS1)" componentmode="Hidden" id="386">
+   <BOUNDS type="Node" left="4080" top="3555" width="7905" height="270">
+   </BOUNDS>
+   <PIN pinname="Device" visible="1">
+   </PIN>
+   <PIN pinname="Enable" visible="1">
+   </PIN>
+   <PIN pinname="Gaze Point 2DXY" visible="1">
+   </PIN>
+   <PIN pinname="Left Eye PosXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Right Eye PosXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Left Eye Validity" visible="1">
+   </PIN>
+   <PIN pinname="Right Eye Validity" visible="1">
+   </PIN>
+   <PIN pinname="Left Eye Pupil Diameter" visible="1">
+   </PIN>
+   <PIN pinname="Right Eye Pupil Diameter" visible="1">
+   </PIN>
+   <PIN pinname="Left Eye Gaze PointXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Right Eye Gaze PointXYZ" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="4080" top="3555">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="386" srcpinname="Gaze Point 2DXY" dstnodeid="393" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Left Eye Validity" dstnodeid="390" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Right Eye Validity" dstnodeid="390" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Left Eye Pupil Diameter" dstnodeid="388" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Right Eye Pupil Diameter" dstnodeid="388" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="335" srcpinname="Device" dstnodeid="386" dstpinname="Device">
+   </LINK>
+   <LINK srcnodeid="379" srcpinname="Y Output Value" dstnodeid="386" dstpinname="Enable" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="9420" y="2198">
+   </LINKPOINT>
+   <LINKPOINT x="11925" y="2198">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Gaze Point 2DXY" dstnodeid="467" dstpinname="Gaze Point 2DXY">
+   </LINK>
+   <LINK srcnodeid="386" srcpinname="Gaze Point 2DXY" dstnodeid="502" dstpinname="Go To Position">
+   </LINK>
    </PATCH>
