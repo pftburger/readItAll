@@ -1,13 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\SCHSCH\Desktop\readItAll\readItAll\Eyetracker\OCRtext.v4p" systemname="OCRtext" filename="C:\Users\SCHSCH\Desktop\readItAll\readItAll\Eyetracker\OCRtext.v4p" scrollx="210" scrolly="420">
-   <BOUNDS type="Window" left="12240" top="1815" width="13020" height="12015">
+   <PATCH nodename="C:\Users\SCHSCH\Desktop\readItAll\readItAll\Eyetracker\OCRtext.v4p" systemname="OCRtext" filename="C:\Users\SCHSCH\Desktop\readItAll\readItAll\Eyetracker\OCRtext.v4p" scrollx="0" scrolly="390">
+   <BOUNDS type="Window" left="3345" top="4515" width="13020" height="12015">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
    <NODE systemname="ShellExecute (Windows Advanced)" filename="%VVVV%\addonpack\lib\nodes\plugins\ShellExecute.dll" nodename="ShellExecute (Windows Advanced)" componentmode="Hidden" id="17">
-   <BOUNDS type="Node" left="4170" top="5205" width="100" height="100">
+   <BOUNDS type="Node" left="3810" top="4935" width="100" height="100">
    </BOUNDS>
    <PIN pinname="File" visible="1" slicecount="1" values="|..\..\Tesseract-OCR\tesseract.exe C:\Users\SCHSCH\Desktop\readItAll\readItAll\text.jpg|">
    </PIN>
@@ -22,6 +22,12 @@
    <PIN pinname="Error" visible="1">
    </PIN>
    <PIN pinname="Completed" visible="1">
+   </PIN>
+   <PIN pinname="Kill" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="ExitCode" visible="1">
+   </PIN>
+   <PIN pinname="IsRunning" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="16" systemname="IOBox (String)">
@@ -251,7 +257,7 @@
    <LINK srcnodeid="7" srcpinname="Content" dstnodeid="4" dstpinname="Input String">
    </LINK>
    <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="3">
-   <BOUNDS type="Node" left="6225" top="6615" width="100" height="100">
+   <BOUNDS type="Node" left="6330" top="6255" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 2" slicecount="1" values=".txt">
    </PIN>
@@ -265,17 +271,17 @@
    <LINK srcnodeid="3" srcpinname="Output" dstnodeid="7" dstpinname="Filename">
    </LINK>
    <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="1">
-   <BOUNDS type="Node" left="5055" top="5670" width="100" height="100">
+   <BOUNDS type="Node" left="5070" top="6075" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Set" visible="1">
+   <PIN pinname="Set" visible="1" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="17" srcpinname="Completed" dstnodeid="1" dstpinname="Set">
-   </LINK>
    <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="0">
-   <BOUNDS type="Node" left="5070" top="6075" width="100" height="100">
+   <BOUNDS type="Node" left="5085" top="6480" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -319,7 +325,7 @@
    </PIN>
    </NODE>
    <NODE systemname="EQ (String)" nodename="EQ (String)" componentmode="Hidden" id="20">
-   <BOUNDS type="Node" left="4410" top="6915" width="100" height="100">
+   <BOUNDS type="Node" left="3750" top="7380" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 2" visible="1">
    </PIN>
@@ -329,9 +335,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="21" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="4650" top="6555" width="795" height="240">
+   <BOUNDS type="Box" left="3990" top="7020" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4650" top="6555" width="0" height="0">
+   <BOUNDS type="Node" left="3990" top="7020" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Default" slicecount="1" values="||">
    </PIN>
@@ -385,5 +391,43 @@
    <LINK srcnodeid="23" srcpinname="Output Node" dstnodeid="22" dstpinname="Texture">
    </LINK>
    <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Save">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="24" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="2325" top="6765" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2325" top="6765" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Error" dstnodeid="24" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="4245" top="5820" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="IsRunning" dstnodeid="30" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Completed" dstnodeid="1" dstpinname="Set">
+   </LINK>
+   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="5520" top="5160" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="IsRunning" dstnodeid="31" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="OnChange" dstnodeid="1" dstpinname="Reset">
    </LINK>
    </PATCH>
